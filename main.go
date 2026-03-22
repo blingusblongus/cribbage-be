@@ -12,8 +12,9 @@ import (
 )
 
 func main() {
-	http.HandleFunc("/api/handStats", handleHandStats)
+	http.HandleFunc("/api/handStats", withMetrics("handStats", handleHandStats))
 	// http.HandleFunc("/api/random", handleRandom)
+	http.HandleFunc("/metrics", metricsHandler)
 
 	port := os.Getenv("PORT")
 	if port == "" {
