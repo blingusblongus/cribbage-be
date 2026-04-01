@@ -1,0 +1,5 @@
+cribbage-be
+.git
+.vscode
+*.log
+.DS_Store
